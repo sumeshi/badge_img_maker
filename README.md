@@ -60,6 +60,13 @@ Downloading: https://example.com/img03.webp
 保存完了: join_image_20250626091530.png
 ```
 
+### x.comのURLからプロフィールイメージのURL取得
+
+付属の x_icon_grab.py を使うとできます。
+```bash
+python x_icon_grab.py https://x.com/example https://x.com/example2
+```
+
 同じディレクトリに `join_image_20250626091530.png` が生成されます。
 
 ---
