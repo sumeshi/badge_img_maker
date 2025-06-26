@@ -78,6 +78,6 @@ def main(urls):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python script.py <URL1> <URL2> ... (最大6つ)")
+        print("Usage: python badge_img_maker.py <URL1> <URL2> ... (最大6つ)")
     else:
         main(sys.argv[1:])
