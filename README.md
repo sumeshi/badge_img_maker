@@ -36,7 +36,7 @@ python -m pip install --upgrade pillow requests
 ## 基本的な使い方
 
 ```bash
-python join_image.py <URL1> <URL2> ... <URL6>
+python badge_img_maker.py <URL1> <URL2> ... <URL6>
 ```
 
 * `<URL1> … <URL6>` に画像の直リンクを指定します（最大 6 個まで。7 個以上渡しても 6 個だけ処理）。
@@ -45,7 +45,7 @@ python join_image.py <URL1> <URL2> ... <URL6>
 ### 例
 
 ```bash
-python join_image.py \
+python badge_img_maker.py \
   https://example.com/img01.jpg \
   https://example.com/img02.png \
   https://example.com/img03.webp
