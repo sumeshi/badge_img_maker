@@ -59,6 +59,9 @@ Downloading: https://example.com/img02.png
 Downloading: https://example.com/img03.webp
 保存完了: join_image_20250626091530.png
 ```
+同じディレクトリに `join_image_20250626091530.png` が生成されます。
+
+---
 
 ### x.comのURLからプロフィールイメージのURL取得
 
@@ -67,6 +70,4 @@ Downloading: https://example.com/img03.webp
 python x_icon_grab.py https://x.com/example https://x.com/example2
 ```
 
-同じディレクトリに `join_image_20250626091530.png` が生成されます。
 
----
