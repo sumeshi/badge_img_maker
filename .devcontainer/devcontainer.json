@@ -1,0 +1,9 @@
+{
+    "name": "badge_img_maker",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
+    "forwardPorts": [
+        8080
+    ],
+    "postCreateCommand": "npm install -g serve",
+    "remoteUser": "node"
+}

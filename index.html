@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badge Image Maker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-2xl lg:max-w-4xl">
+        <h1 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-4">
+            Badge Image Maker
+        </h1>
+
+        <!-- Description Section -->
+        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 sm:p-6 mb-6 sm:mb-8 rounded-r-lg">
+            <h2 class="text-base sm:text-lg font-semibold text-blue-800 mb-3">58mm円形缶バッジ用原稿作成ツール</h2>
+            <div class="text-sm sm:text-base text-gray-700 space-y-2">
+                <p>• セブンイレブンの写真印刷機能で2Lサイズ1枚に6人分の原稿を作成します</p>
+                <p>• 写真印刷は1枚100円かかります (2025年7月18日現在)</p>
+                <p>• 最大6つの画像を685×685pxの正方形にクロップ・リサイズして配置</p>
+                <p>• 3行×2列のグリッドレイアウトで1502×2104pxの画像を生成</p>
+                <p>• 出力ファイル名: join_image_[timestamp].png</p>
+            </div>
+            <div class="mt-4 text-xs sm:text-sm text-gray-600">
+                <p>Fork from: <a href="https://github.com/luminjp/badge_img_maker" target="_blank" class="text-blue-600 hover:text-blue-800 underline">https://github.com/luminjp/badge_img_maker</a></p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-6 sm:mb-8">
+            <h2 class="text-lg sm:text-xl font-semibold text-gray-700 mb-4">Upload Images (Max 6)</h2>
+
+            <div class="mb-6">
+                <input type="file" id="imageInput" multiple accept="image/*" class="hidden">
+                <label for="imageInput"
+                    class="inline-flex items-center px-4 sm:px-6 py-3 bg-blue-500 text-white text-sm sm:text-base font-medium rounded-lg cursor-pointer hover:bg-blue-600 transition-colors duration-200">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    Select Images
+                </label>
+            </div>
+
+            <div id="imagePreview" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-6"></div>
+
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <button id="generateBtn"
+                    class="w-full sm:flex-1 px-4 sm:px-6 py-3 bg-green-500 text-white text-sm sm:text-base font-medium rounded-lg hover:bg-green-600 transition-colors duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed"
+                    disabled>
+                    Generate Badge
+                </button>
+
+                <button id="clearBtn"
+                    class="w-full sm:flex-1 px-4 sm:px-6 py-3 bg-red-500 text-white text-sm sm:text-base font-medium rounded-lg hover:bg-red-600 transition-colors duration-200">
+                    Clear Images
+                </button>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-4 sm:p-6">
+            <h2 class="text-lg sm:text-xl font-semibold text-gray-700 mb-4">Preview</h2>
+            <div class="flex justify-center">
+                <canvas id="canvas" width="1502" height="2104"
+                    class="border-2 border-gray-200 rounded-lg max-w-full h-auto" style="display: none;"></canvas>
+                <div id="placeholder" class="text-gray-400 text-center py-8 sm:py-16 text-sm sm:text-base">
+                    Select images and click "Generate Badge" to create your badge
+                </div>
+            </div>
+
+            <div class="mt-4 text-center">
+                <button id="downloadBtn"
+                    class="w-full sm:w-auto px-4 sm:px-6 py-3 bg-purple-500 text-white text-sm sm:text-base font-medium rounded-lg hover:bg-purple-600 transition-colors duration-200"
+                    style="display: none;">
+                    Download Image
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./src/main.js"></script>
+</body>
+
+</html>
